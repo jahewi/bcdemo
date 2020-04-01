@@ -50,6 +50,10 @@ namespace AspNetWebDemo.Controllers
                     SähköpostiOsoite="info@ayritys.fi"
                 }
             };
+
+            // This can now be used in the view
+            ViewBag.Napinväri = "primary";
+
             return View(asiakkaat);
         }
 
