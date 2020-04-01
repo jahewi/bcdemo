@@ -1,0 +1,35 @@
+﻿@model List<AspNetWebDemo.Models.Asiakas>
+@{
+    ViewData["Title"] = "Examples";
+}
+
+<h1>Examples</h1>
+<input class="form-control w-25" type="text" />
+<button class="btn btn-info mt-2">PUSH ME?</button>
+<hr />
+<ul>
+    @for (int i = 0; i < 3; i++)
+    {
+        <li>Item @(i+1)</li>
+    }
+</ul>
+<hr />
+<table class="table table-striped w-50">
+    <thead>
+        <tr>
+            <th>Asiakas-ID</th>
+            <th>Nimi</th>
+            <th>sPosti</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (AspNetWebDemo.Models.Asiakas asiakas in Model)
+        {
+        <tr>
+            <td>@asiakas.AsiakasId</td>
+            <td>@asiakas.AsiakasNimi</td>
+            <td>@asiakas.SähköpostiOsoite</td>
+        </tr>
+        }
+    </tbody>
+</table>

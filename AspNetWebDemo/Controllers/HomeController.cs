@@ -33,6 +33,26 @@ namespace AspNetWebDemo.Controllers
             return View();
         }
 
+        public IActionResult Examples()
+        {
+            List<Asiakas> asiakkaat = new List<Asiakas>()
+            {
+                new Asiakas()
+                {
+                    AsiakasId=101,
+                    AsiakasNimi="Asiakas Oy",
+                    SähköpostiOsoite="info@asiakas.fi"
+                },
+                new Asiakas()
+                {
+                    AsiakasId=102,
+                    AsiakasNimi="Yritys Oy",
+                    SähköpostiOsoite="info@ayritys.fi"
+                }
+            };
+            return View(asiakkaat);
+        }
+
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()
         {
